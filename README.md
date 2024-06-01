@@ -1,2 +1,3 @@
 # ngo_portal
 a portal to provide basic functionalities for a NGO.
+author- srushti & disha
