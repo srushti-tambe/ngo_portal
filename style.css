@@ -3,6 +3,7 @@ body {
     background-color: #D5E8D4; /* Light green background */
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -24,16 +25,19 @@ header h1 {
 
 main {
         padding: 30px 0px 0px; /* Add top padding to avoid content being hidden behind fixed header and nav */ 
+        position: relative;
 }
 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     max-width: 75%;
+    margin-top: 400px;
     margin: 0px auto;
     text-align: center;
     font-size: 20px;
     padding: 10px 10px;
+    
 }
 
 .star {
@@ -47,18 +51,77 @@ tr:hover {
 .motto {
     text-align: center;
     font-size: 20px;
+    margin-top: 575px;
 }
 
 .full-image-section {
     margin-top: 70px;
     margin-left: 0px;
     margin-right: 0px;
-    background-image: url('mainPhoto.jpg'); /* Replace with the path to your image */
+    
     background-size: cover;
     background-position: center;
     height: 70vh;
     width: 100%;
+    position: absolute;
 }
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 70vh; /* Adjusted to match your height requirement */
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-item:nth-child(1) {
+    background-image: url('mainPhoto.jpg');
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url('mainPhoto.jpg');
+}
+
+.carousel-item:nth-child(3) {
+    background-image: url('mainPhoto.jpg');
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
 th {
     font-size: 28px;
 }
@@ -91,6 +154,8 @@ h2 {
     border-radius: 5px;
     max-width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    
 }
 
 .ngo-list ul {
@@ -127,12 +192,13 @@ h2 {
 footer {
     background-color: #2E8B57; /* Seagreen */
     color: white;
+    height: 30px;
     text-align: center;
     padding: 1em 0;
     position: fixed;
     width: 100%;
     bottom: 0px;
-    margin-top: 40px;
+    margin-top: 35px;
 }
 
 footer p {
