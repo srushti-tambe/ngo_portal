@@ -5,15 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Website</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function handleLogoClick() {
-            if (window.location.pathname.endsWith('index.html')) {
-                window.location.reload();
-            } else {
-                window.location.href = 'index.html';
-            }
-        }
-    </script>
+    <script src = "script.js"></script>
 </head>
 <body>
     <header>
@@ -30,10 +22,18 @@
         </nav>
     </header>
     <main>
+        
 
         <section class="full-image-section">
             <div class="text-overlay"><h2>Welcome to Our Donation Platform. Support various NGOs and make a difference.</h2>
                 </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item"></div>
+                    <div class="carousel-item"></div>
+                    <div class="carousel-item"></div>
+                </div>
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
         </section>
 
         <section class = "motto">
