@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src = "script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="logo" onclick="handleLogoClick()">
+                    <img src="logo.png" alt="Logo" class="logo-img"></a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="full-img" id = "fullImgBox">
+        <img src="galleryImages/5---Help-the-Children-Chase-Dreams-with-Best-NGO-in-Kolkata_1655873902.png" id = "fullImg">
+        <span onclick = "closeFullImg()">X</span>
+    </div>
+
+    <div class="img-gallery">
+        <img src="galleryImages/5---Help-the-Children-Chase-Dreams-with-Best-NGO-in-Kolkata_1655873902.png" onclick = "openFullImg()">
+        <img src="galleryImages/77007715.webp" onclick = "openFullImg(this.src)">
+        <img src="galleryImages/hi.png" onclick = "openFullImg(this.src)">
+        <img src="galleryImages/images (1).jpeg" onclick = "openFullImg(this.src)">
+        <img src="galleryImages/images (2).jpeg" onclick = "openFullImg(this.src)">
+        <img src="galleryImages/images.jpeg" onclick = "openFullImg(this.src)">
+        <img src="galleryImages/ngo-h.webp" onclick = "openFullImg(this.src)">
+        <img src="galleryImages/ngo-hi.png" onclick = "openFullImg(this.src)">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Donation Platform. All rights reserved.</p>
+    </footer>
+    
+    
+
+</body>
+</html>
