@@ -1,6 +1,6 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #D5E8D4; /* Light green background */
+    background-color: #ddd; /* Light green background */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -306,4 +306,30 @@ nav ul li a:hover {
     font-size: 30px;
     color: rgb(255, 255, 255);
     cursor: pointer;
+}
+
+/* about */
+.about {
+    margin-top: 90px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 80px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #4CAF50;
+}
+
+p {
+    line-height: 1.6;
+}
+
+em {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }
