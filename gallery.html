@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donation Website</title>
-    <link rel="stylesheet" href="style.css">
-
-    <script src = "script.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <!-- <script src="script.js"></script> -->
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="home.html" class="logo" onclick="handleLogoClick()">
-                    <img src="logo.png" alt="Logo" class="logo-img"></a></li>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="signin.html">Sign In</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="home.html" class="logo" onclick="handleLogoClick()">
+              <img src="images/logo.png" alt="Logo" class="logo-img"
+            /></a>
+          </li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </nav>
     </header>
+    <div class="container">
+      <h1>NGO Gallery</h1>
+      <div class="img-gallery">
+        <div class="image"><img src="images/image2.jpg" alt="image1" /></div>
+        <div class="image"><img src="images/image3.jpg" alt="image2" /></div>
+        <div class="image"><img src="images/imag4.jpg" alt="image3" /></div>
+        <div class="image"><img src="images/image5.jpg" alt="image4" /></div>
+        <div class="image"><img src="images/image6.jpg" alt="image5" /></div>
+        <div class="image"><img src="images/image2.jpg" alt="image6" /></div>
+        <div class="image"><img src="images/image2.jpg" alt="image1" /></div>
+        <div class="image"><img src="images/image3.jpg" alt="image2" /></div>
+        <div class="image"><img src="images/imag4.jpg" alt="image3" /></div>
+        <div class="image"><img src="images/image5.jpg" alt="image4" /></div>
+        <div class="image"><img src="images/image6.jpg" alt="image5" /></div>
+        <div class="image"><img src="images/image2.jpg" alt="image6" /></div>
+      </div>
 
-    <div class="full-img" id = "fullImgBox">
-        <img src="galleryImages/5---Help-the-Children-Chase-Dreams-with-Best-NGO-in-Kolkata_1655873902.png" id = "fullImg">
-        <span onclick = "closeFullImg()">X</span>
+      <div class="popup-img">
+        <span>&times;</span>
+        <img src="images/image2.jpg" alt="" />
+      </div>
     </div>
-
-    <div class="img-gallery">
-        <img src="galleryImages/5---Help-the-Children-Chase-Dreams-with-Best-NGO-in-Kolkata_1655873902.png" onclick = "openFullImg()">
-        <img src="galleryImages/77007715.webp" onclick = "openFullImg(this.src)">
-        <img src="galleryImages/hi.png" onclick = "openFullImg(this.src)">
-        <img src="galleryImages/images (1).jpeg" onclick = "openFullImg(this.src)">
-        <img src="galleryImages/images (2).jpeg" onclick = "openFullImg(this.src)">
-        <img src="galleryImages/images.jpeg" onclick = "openFullImg(this.src)">
-        <img src="galleryImages/ngo-h.webp" onclick = "openFullImg(this.src)">
-        <img src="galleryImages/ngo-hi.png" onclick = "openFullImg(this.src)">
-    </div>
-
+    <script>
+      document.querySelectorAll(".img-gallery img").forEach((image) => {
+        image.onclick = () => {
+          document.querySelector(".popup-img").style.display = "block";
+          document.querySelector(".popup-img img").src =
+            image.getAttribute("src");
+        };
+      });
+      document.querySelector(".popup-img span").onclick = () => {
+        document.querySelector(".popup-img").style.display = "none";
+      };
+    </script>
     <footer>
-        <p>&copy; 2024 Donation Platform. All rights reserved.</p>
+      <p>&copy; 2024 Donation Platform. All rights reserved.</p>
     </footer>
-    
-    
-
-</body>
+  </body>
 </html>
