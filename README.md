@@ -2,4 +2,4 @@
 
 a portal to provide basic functionalities for an NGO.
 <br>
-author- srushti tambe & disha sanguri
+author- Srushti Tambe and Disha Sanguri
