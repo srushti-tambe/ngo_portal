@@ -4,10 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="newStyle.css" />
     <link rel="stylesheet" href="donate-pay.css" />
     <script src="script.js"></script>
-    <script src="donate-pay.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('myForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('/submit-donate', {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        });
+      });
+       
+    </script>
+
   </head>
   <body>
     <header>
@@ -28,76 +49,79 @@
     </header>
     <main>
       <div class="container">
-        <form action="#">
+      <form action='/submit' id = "myForm" method="post">
+      
           <div class="row">
             <div class="col">
               <h2 class="title">Payment</h2>
 
               <div class="inputBox">
-                <label for="name"> Full Name: </label>
+                <label for="name" name = "name"> Full Name: </label>
                 <input
                   type="text"
                   id="name"
+                  name = "name"
                   placeholder="Enter your full name"
                   required
                 />
               </div>
 
               <div class="inputBox">
-                <label for="email"> Email: </label>
+                <label for="email" name = "email"> Email: </label>
                 <input
                   type="text"
                   id="email"
+                  name = "email"
                   placeholder="Enter email address"
                   required
                 />
               </div>
 
               <div class="inputBox">
-                <label for="amount"> Amount: </label>
-                <input type="number" id="amount" placeholder="Rs" required />
+                <label for="amount" name ="amount"> Amount: </label>
+                <input type="number" name ="amount" placeholder="Rs" required />
               </div>
               <div class="inputBox">
-                <label for="">NGO:</label>
-                <select name="" id="">
+                <label for="" name = "ngo">NGO:</label>
+                <select name = "ngo">
                   <option value="">Choose NGO</option>
-                  <option value="January">Goonj</option>
-                  <option value="February">Pratham</option>
-                  <option value="March">Sightsavers</option>
-                  <option value="April">Project Nanhi Kal</option>
-                  <option value="May">Akshaya Patra Foundation</option>
-                  <option value="June">SERUDS</option>
-                  <option value="July">Save the Children India</option>
-                  <option value="August">SEEDS</option>
-                  <option value="September">HelpAge India</option>
-                  <option value="October">CRY (Child Rights and You)</option>
+                  <option value="Goonj" name = "ngo">Goonj</option>
+                  <option value="Pratham" name = "ngo">Pratham</option>
+                  <option value="Sightsavers" name = "ngo">Sightsavers</option>
+                  <option value="Project Nanhi Kal" name = "ngo">Project Nanhi Kal</option>
+                  <option value="Akshaya Patra Foundation" name = "ngo">Akshaya Patra Foundation</option>
+                  <option value="SERUDS" name = "ngo">SERUDS</option>
+                  <option value="Save the Children India" name = "ngo">Save the Children India</option>
+                  <option value="SEEDS" name = "ngo">SEEDS</option>
+                  <option value="HelpAge India" name = "ngo">HelpAge India</option>
+                  <option value="CRY (Child Rights and You)" name = "ngo">CRY (Child Rights and You)</option>
                 </select>
               </div>
               <div class="inputBox">
-                <label for="">Cause Category:</label>
-                <select name="" id="">
+                <label for="" name ="cause">Cause Category:</label>
+                <select name ="cause">
                   <option value="">Choose Cause</option>
-                  <option value="January">Education</option>
-                  <option value="February">Health</option>
-                  <option value="March">Sports</option>
-                  <option value="April">Insurance</option>
-                  <option value="May">Girl Education</option>
-                  <option value="June">Mid-day meals</option>
-                  <option value="July">Diasability and Development</option>
-                  <option value="August">August</option>
-                  <option value="September">Elderly Care</option>
-                  <option value="October">Child Welfare</option>
-                  <option value="November">Holistic Development</option>
-                  <option value="December">Polio Treatment</option>
+                  <option value="Education" name ="cause">Education</option>
+                  <option value="Health" name ="cause">Health</option>
+                  <option value="Sports" name ="cause">Sports</option>
+                  <option value="Insurance" name ="cause">Insurance</option>
+                  <option value="Girl Education" name ="cause">Girl Education</option>
+                  <option value="Mid-day meals" name ="cause">Mid-day meals</option>
+                  <option value="Diasability and Development" name ="cause">Diasability and Development</option>
+                  <option value="August" name ="cause">August</option>
+                  <option value="Elderly Care" name ="cause">Elderly Care</option>
+                  <option value="Child Welfare" name ="cause">Child Welfare</option>
+                  <option value="Holistic Development" name ="cause">Holistic Development</option>
+                  <option value="Polio Treatment" name ="cause">Polio Treatment</option>
                 </select>
               </div>
               <div class="inputBox">
-                <label for="">Donation Type:</label>
-                <select name="" id="">
+                <label for="" name = "donationType">Donation Type:</label>
+                <select name = "donationType" id="">
                   <option value="">Choose type</option>
-                  <option value="One-Time">One-Time</option>
-                  <option value="Monthly">Monthly</option>
-                  <option value="Campaign">Campaign</option>
+                  <option value="One-Time" name = "donationType">One-Time</option>
+                  <option value="Monthly" name = "donationType">Monthly</option>
+                  <option value="Campaign" name = "donationType">Campaign</option>
                 </select>
               </div>
             </div>
@@ -107,10 +131,10 @@
             type="submit"
             value="Proceed to Pay"
             id="submit_btn"
-            onclick="myFunction()"
           />
         </form>
       </div>
+    
     </main>
     <footer>
       <p>&copy; 2024 Donation Platform. All rights reserved.</p>

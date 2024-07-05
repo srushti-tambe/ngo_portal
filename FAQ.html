@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Website</title>
+    <link rel="stylesheet" href="newStyle.css">
+    <link rel="stylesheet" href="FAQ.css">
+    <script src = "script.js"></script>
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const faqList = document.getElementById('faq-list');
+
+        searchButton.addEventListener('click', () => {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            const faqs = faqList.children;
+
+            for (let i = 0; i < faqs.length; i++) {
+                const faq = faqs[i];
+                const question = faq.textContent.trim().toLowerCase();
+
+                if (question.includes(searchTerm)) {
+                    faq.style.display = 'block';
+                } else {
+                    faq.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="logo" onclick="handleLogoClick()">
+                    <img src="logo.png" alt="Logo" class="logo-img"></a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main><div class="faq-container">
+        <h2>FAQs</h2>
+        <input type="search" id="search-input" class="search-input" placeholder="Search FAQs">
+        <button class="search-button" id="search-button">🔍</button>
+        <div id="faq-list">
+            <div class="faq-question">Q: What is the meaning of life?</div>
+            <div class="faq-answer">A: The meaning of life is to find your purpose and be happy.</div>
+            <div class="faq-question">Q: How do I learn to code?</div>
+            <div class="faq-answer">A: You can learn to code by taking online courses, reading books, and practicing.</div>
+            <div class="faq-question">Q: What is the best programming language?</div>
+            <div class="faq-answer">A: The best programming language is the one that solves your problem.</div>
+            <div class="faq-question">Q: What is the meaning of life?</div>
+            <div class="faq-answer">A: The meaning of life is to find your purpose and be happy.</div>
+            <div class="faq-question">Q: How do I learn to code?</div>
+            <div class="faq-answer">A: You can learn to code by taking online courses, reading books, and practicing.</div>
+            <div class="faq-question">Q: What is the best programming language?</div>
+            <div class="faq-answer">A: The best programming language is the one that solves your problem.</div><div class="faq-question">Q: What is the meaning of life?</div>
+            <div class="faq-answer">A: The meaning of life is to find your purpose and be happy.</div>
+            <div class="faq-question">Q: How do I learn to code?</div>
+            <div class="faq-answer">A: You can learn to code by taking online courses, reading books, and practicing.</div>
+            <div class="faq-question">Q: What is the best programming language?</div>
+            <div class="faq-answer">A: The best programming language is the one that solves your problem.</div>
+            <!-- Add more FAQs here -->
+        </div>
+    </div>
+
+</main>
+    <footer>
+        <p>&copy; 2024 Donation Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,5 +1,6 @@
 body {
-  margin-top: 120px;
+  margin-top: 15px;
+  overflow-y: hidden;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
@@ -24,6 +25,7 @@ h3 {
   align-items: center;
   min-height: 100vh;
   padding: 25px;
+  margin-top: 0px;
 }
 
 .container form {
