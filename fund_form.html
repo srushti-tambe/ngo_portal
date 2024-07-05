@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundraisiing Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="donate-pay.css" />
+    <script src="script.js"></script>
+    <!-- <script src="donate-pay.js"></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("myForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch("/submit-fund", {
+              method: "POST",
+              body: JSON.stringify(Object.fromEntries(formData)),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                alert(data.message);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="home.html" class="logo" onclick="handleLogoClick()">
+              <img src="images/dnlogo.png" alt="Logo" class="logo-img"
+            /></a>
+          </li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <form action="/submit-fund" id="myForm" method="POST">
+          <div class="row">
+            <div class="col">
+              <h2 class="title">Fundraising!</h2>
+
+              <div class="inputBox">
+                <label for="name" name="user_name"> Full Name: </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <div class="inputBox">
+                <label for="email" name="user_email"> Email: </label>
+                <input
+                  type="text"
+                  id="email"
+                  name="user_email"
+                  placeholder="Enter email address"
+                  required
+                />
+              </div>
+
+              <div class="inputBox">
+                <label for="" name="campaign_name">Campaign:</label>
+                <select name="campaign_name">
+                  <option value="">Choose Opportunity</option>
+                  <option value="Goonj" name="campaign_name">Goonj</option>
+                  <option value="Pratham" name="campaign_name">Pratham</option>
+                  <option value="Sightsavers" name="campaign_name">
+                    Sightsavers
+                  </option>
+                  <option value="Project Nanhi Kal" name="campaign_name">
+                    Project Nanhi Kal
+                  </option>
+                  <option value="Akshaya Patra Foundation" name="campaign_name">
+                    Akshaya Patra Foundation
+                  </option>
+                  <option value="SERUDS" name="campaign_name">SERUDS</option>
+                  <option value="Save the Children India" name="campaign_name">
+                    Save the Children India
+                  </option>
+                  <option value="SEEDS" name="campaign_name">SEEDS</option>
+                  <option value="HelpAge India" name="campaign_name">
+                    HelpAge India
+                  </option>
+                  <option
+                    value="CRY (Child Rights and You)"
+                    name="campaign_name"
+                  >
+                    CRY (Child Rights and You)
+                  </option>
+                </select>
+              </div>
+
+              <div class="inputBox">
+                <label for="amount" name="goal_amount">Goal Amount: </label>
+                <input
+                  type="number"
+                  id="amount"
+                  name="goal_amount"
+                  min="100"
+                  step="0.01"
+                  placeholder="Enter amount"
+                  required
+                />
+              </div>
+
+              <div class="inputBox">
+                <label for="amount" name="raised_amount">Raised Amount: </label>
+                <input
+                  type="number"
+                  id="amount"
+                  name="raised_amount"
+                  min="100"
+                  step="0.01"
+                  placeholder="Enter amount"
+                  required
+                />
+              </div>
+
+              <div class="inputBox">
+                <label for="">End Date:</label>
+                <input
+                  type="date"
+                  id="end_date"
+                  name="end_date"
+                  required
+                  min="2024-11-01"
+                />
+              </div>
+            </div>
+          </div>
+
+          <input type="submit" value="Submit" id="submit_btn" />
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Donation Platform. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
